@@ -23,7 +23,13 @@ class ViewController: NSViewController {
         
         
     }
+    @IBAction func cleanDNSCache(sender: AnyObject) {
+        
+        
+        
+    }
     
+    @IBOutlet weak var cleanDNSCacheButton: NSButton!
     @IBOutlet var text: NSTextView!
     
     @IBOutlet weak var runButton: NSButton!
@@ -34,6 +40,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         runButton.enabled = false
+        cleanDNSCacheButton.enabled = false
         downloadFiles = DownloadFiles()
         downloadFilesHandle()
 

@@ -152,10 +152,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="438" height="187"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="438" height="187"/>
+                                            <size key="minSize" width="423" height="187"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="438" height="187"/>
+                                            <size key="minSize" width="423" height="187"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -166,7 +166,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="R0l-d5-v9m">
-                                    <rect key="frame" x="423" y="1" width="16" height="187"/>
+                                    <rect key="frame" x="424" y="1" width="15" height="187"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -180,6 +180,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="cleanDNSCache:" target="XfG-lQ-9wD" id="4Ml-lh-vNT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -198,6 +201,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cleanDNSCacheButton" destination="NDY-Qr-Lc6" id="BFv-f6-b8l"/>
                         <outlet property="runButton" destination="lTd-Cc-Z1Q" id="O83-Yf-0z9"/>
                         <outlet property="selectButton" destination="DO1-TP-7Aa" id="kO8-IJ-TYn"/>
                         <outlet property="selectNetworkButton" destination="6LP-cG-nJ0" id="Wsg-W2-vlM"/>
