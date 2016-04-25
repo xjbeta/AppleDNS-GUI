@@ -144,9 +144,17 @@ class ViewController: NSViewController {
     func doScriptWithAdmin(inScript: String){
         let script = "do shell script \"\(inScript)\" with administrator privileges"
         let appleScript = NSAppleScript(source: script)!
-        appleScript.executeAndReturnError(nil)
+        let text = appleScript.executeAndReturnError(nil)
         
-        
+        if let str = text.stringValue {
+            
+            if str == "" {
+                cleanDNSCacheButton.title = "清理成功"
+            } else {
+                cleanDNSCacheButton.title = "出现一些问题"
+                self.text.string = "\(str)"
+            }
+        }
         
     }
 
