@@ -1,5 +1,7 @@
 # AppleDNS-GUI
 
+## 已失效  请勿下载
+
 
 #### [下载](https://github.com/xjbeta/AppleDNS-GUI/releases)
 #### 请熟读[AppleDNS](https://github.com/gongjianhui/AppleDNS)相关内容后再使用本APP
