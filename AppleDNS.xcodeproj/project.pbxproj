@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		011329381CB763C900502326 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011329371CB763C900502326 /* Task.swift */; };
+		0131AF551DFBF63700C1FB11 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131AF541DFBF63700C1FB11 /* MainWindow.swift */; };
 		01649E221CB649F000740E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01649E211CB649F000740E9E /* AppDelegate.swift */; };
 		01649E241CB649F000740E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01649E231CB649F000740E9E /* ViewController.swift */; };
 		01649E261CB649F000740E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01649E251CB649F000740E9E /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		011329371CB763C900502326 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0131AF541DFBF63700C1FB11 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		01649E1E1CB649F000740E9E /* AppleDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01649E211CB649F000740E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01649E231CB649F000740E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,12 +58,13 @@
 		01649E201CB649F000740E9E /* AppleDNS */ = {
 			isa = PBXGroup;
 			children = (
+				01649E271CB649F000740E9E /* Main.storyboard */,
+				0131AF541DFBF63700C1FB11 /* MainWindow.swift */,
 				01649E211CB649F000740E9E /* AppDelegate.swift */,
 				01649E231CB649F000740E9E /* ViewController.swift */,
 				01649E301CB6521600740E9E /* DownloadFiles.swift */,
 				011329371CB763C900502326 /* Task.swift */,
 				01649E251CB649F000740E9E /* Assets.xcassets */,
-				01649E271CB649F000740E9E /* Main.storyboard */,
 				01649E2A1CB649F000740E9E /* Info.plist */,
 			);
 			path = AppleDNS;
@@ -94,11 +97,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = xjbeta;
 				TargetAttributes = {
 					01649E1D1CB649F000740E9E = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -139,6 +143,7 @@
 			files = (
 				011329381CB763C900502326 /* Task.swift in Sources */,
 				01649E311CB6521600740E9E /* DownloadFiles.swift in Sources */,
+				0131AF551DFBF63700C1FB11 /* MainWindow.swift in Sources */,
 				01649E241CB649F000740E9E /* ViewController.swift in Sources */,
 				01649E221CB649F000740E9E /* AppDelegate.swift in Sources */,
 			);
@@ -172,8 +177,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -217,8 +224,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -237,6 +246,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -250,6 +260,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "xjbeta.tiny-gmail.com.AppleDNS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -263,6 +274,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "xjbeta.tiny-gmail.com.AppleDNS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

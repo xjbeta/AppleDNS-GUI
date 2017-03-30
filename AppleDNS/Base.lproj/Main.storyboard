@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -68,14 +69,109 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="MainWindow" customModule="AppleDNS" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="AppleDNS" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="520" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="270"/>
+                        <value key="minSize" type="size" width="520" height="270"/>
+                        <toolbar key="toolbar" implicitIdentifier="F38C5A83-C70B-4AEC-8EC7-A78FBC12F389" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="0kB-Uz-a6L">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Krl-NU-Esw"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9cP-ph-X7a"/>
+                                <toolbarItem implicitItemIdentifier="A4CE3F75-39BE-438E-B469-6314DE81E073" label="Custom View" paletteLabel="Custom View" id="4Al-zt-Hca">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="80" height="31"/>
+                                    <size key="maxSize" width="90" height="32"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="UDH-XD-E4B">
+                                        <rect key="frame" x="0.0" y="14" width="90" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="ros" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1Xx-Gn-HU6" id="OPT-HJ-QdK">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <menu key="menu" id="3Qm-z8-yAP">
+                                                <items>
+                                                    <menuItem title="ros" id="1Xx-Gn-HU6"/>
+                                                    <menuItem title="hosts" id="vcp-aO-or8"/>
+                                                    <menuItem title="surge" state="on" id="9Bd-PE-rza"/>
+                                                    <menuItem title="unbound" id="q8l-xF-sZP" userLabel="unbound">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="dnsmasq" id="Ktg-B7-DnO" userLabel="dnsmasq">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0D172FBB-A44F-4BC3-90BB-29C3482D1729" label="Custom View" paletteLabel="Custom View" id="ecn-uR-2g0">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="100" height="31"/>
+                                    <size key="maxSize" width="110" height="32"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="NM4-bT-w28">
+                                        <rect key="frame" x="0.0" y="14" width="110" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="ChinaNet" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="j6a-KI-4PD" id="1go-Rb-g7F">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <menu key="menu" id="QTq-50-KOA">
+                                                <items>
+                                                    <menuItem title="ChinaNet" state="on" id="j6a-KI-4PD"/>
+                                                    <menuItem title="CMCC" id="Z12-aU-Z3v"/>
+                                                    <menuItem title="ChinaUnicom" id="s2F-bF-DS5"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F4CF160C-36C9-4E21-A226-ED619FB71EA5" label="Custom View" paletteLabel="Custom View" id="96A-Sc-MAg">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="69" height="31"/>
+                                    <size key="maxSize" width="93" height="43"/>
+                                    <button key="view" verticalHuggingPriority="750" id="kbx-u2-r1g">
+                                        <rect key="frame" x="0.0" y="14" width="93" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nbY-bp-7uf">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="runButton:" target="B8D-0N-5wS" id="T5u-Va-PBX"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1FCA58FD-8A72-4AAB-B039-F110760A3AB6" label="Custom View" paletteLabel="Custom View" id="HCE-TU-Fn2">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="110" height="31"/>
+                                    <size key="maxSize" width="134" height="43"/>
+                                    <button key="view" verticalHuggingPriority="750" id="PSH-mD-6hQ">
+                                        <rect key="frame" x="0.0" y="14" width="134" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Clear dns cache" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="spi-bb-wpx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="cleanDNSButton:" target="B8D-0N-5wS" id="Jzp-f8-SEQ"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="4Al-zt-Hca"/>
+                                <toolbarItem reference="ecn-uR-2g0"/>
+                                <toolbarItem reference="9cP-ph-X7a"/>
+                                <toolbarItem reference="HCE-TU-Fn2"/>
+                                <toolbarItem reference="96A-Sc-MAg"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
+                        <outlet property="cleanDNSButton" destination="PSH-mD-6hQ" id="7Vm-Uu-QFe"/>
+                        <outlet property="runButton" destination="96A-Sc-MAg" id="cWz-fk-zGk"/>
+                        <outlet property="selectButton" destination="UDH-XD-E4B" id="zCN-Zz-wqV"/>
+                        <outlet property="selectNetworkButton" destination="NM4-bT-w28" id="X4U-rm-FDo"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -88,74 +184,22 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="AppleDNS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DO1-TP-7Aa">
-                                <rect key="frame" x="18" y="226" width="76" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="Awl-BT-No8"/>
-                                    <constraint firstAttribute="height" constant="21" id="viH-Ru-Sxa"/>
-                                </constraints>
-                                <popUpButtonCell key="cell" type="push" title="merlin" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dqE-Zn-LlI" id="Xek-tO-Aor">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="K5z-Ig-GQj">
-                                        <items>
-                                            <menuItem title="surge" id="bDO-IA-55w"/>
-                                            <menuItem title="hosts" id="ows-bO-hwq"/>
-                                            <menuItem title="merlin" state="on" id="dqE-Zn-LlI"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lTd-Cc-Z1Q">
-                                <rect key="frame" x="385" y="222" width="81" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Y5n-Gl-X7g"/>
-                                    <constraint firstAttribute="width" constant="69" id="fPA-NZ-fVX"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UE3-8r-Xbj">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="run:" target="XfG-lQ-9wD" id="YoN-Ot-I1h"/>
-                                </connections>
-                            </button>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-cG-nJ0">
-                                <rect key="frame" x="97" y="226" width="76" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hO7-il-ZcJ"/>
-                                    <constraint firstAttribute="width" constant="71" id="x8n-Gw-agO"/>
-                                </constraints>
-                                <popUpButtonCell key="cell" type="push" title="电信" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vgg-s6-NET" id="rSf-rD-2oo">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="sck-jB-BC6">
-                                        <items>
-                                            <menuItem title="电信" state="on" id="vgg-s6-NET"/>
-                                            <menuItem title="移动" id="870-8i-2Oz"/>
-                                            <menuItem title="联通" id="Ehz-0j-MwY"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-qN-yl6">
-                                <rect key="frame" x="20" y="20" width="440" height="189"/>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-qN-yl6">
+                                <rect key="frame" x="0.0" y="0.0" width="520" height="270"/>
                                 <clipView key="contentView" id="uHc-D1-b43">
-                                    <rect key="frame" x="1" y="1" width="438" height="187"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="520" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="uEE-sD-hcP">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="187"/>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="uEE-sD-hcP">
+                                            <rect key="frame" x="0.0" y="0.0" width="520" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="423" height="187"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <size key="minSize" width="520" height="270"/>
+                                            <size key="maxSize" width="520" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="423" height="187"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,51 +209,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="R0l-d5-v9m">
-                                    <rect key="frame" x="424" y="1" width="15" height="187"/>
+                                    <rect key="frame" x="504" y="0.0" width="16" height="270"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-Qr-Lc6">
-                                <rect key="frame" x="265" y="222" width="120" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="UDA-gc-gMQ"/>
-                                    <constraint firstAttribute="width" constant="108" id="ZVB-1h-uc8"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="清理DNS缓存" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y7v-uS-LaE">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="cleanDNSCache:" target="XfG-lQ-9wD" id="4Ml-lh-vNT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="NDk-qN-yl6" secondAttribute="bottom" constant="20" id="3eW-RD-6xC"/>
-                            <constraint firstItem="NDk-qN-yl6" firstAttribute="top" secondItem="NDY-Qr-Lc6" secondAttribute="bottom" constant="20" id="3lI-ci-LZW"/>
-                            <constraint firstItem="6LP-cG-nJ0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="7d6-CR-RPG"/>
-                            <constraint firstItem="NDk-qN-yl6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="7o1-aI-CXd"/>
-                            <constraint firstItem="NDY-Qr-Lc6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Dsa-kn-dTz"/>
-                            <constraint firstItem="lTd-Cc-Z1Q" firstAttribute="leading" secondItem="NDY-Qr-Lc6" secondAttribute="trailing" constant="12" id="I71-Ws-UbI"/>
-                            <constraint firstAttribute="trailing" secondItem="lTd-Cc-Z1Q" secondAttribute="trailing" constant="20" id="WgB-y8-sPq"/>
-                            <constraint firstAttribute="trailing" secondItem="NDk-qN-yl6" secondAttribute="trailing" constant="20" id="YAP-0u-I6p"/>
-                            <constraint firstItem="6LP-cG-nJ0" firstAttribute="leading" secondItem="DO1-TP-7Aa" secondAttribute="trailing" constant="8" id="gkh-z4-gKo"/>
-                            <constraint firstItem="lTd-Cc-Z1Q" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="h3Z-Ih-u0U"/>
-                            <constraint firstItem="DO1-TP-7Aa" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ifR-WI-XFB"/>
-                            <constraint firstItem="DO1-TP-7Aa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="y3m-S1-80c"/>
+                            <constraint firstAttribute="bottom" secondItem="NDk-qN-yl6" secondAttribute="bottom" id="EfC-T1-bbw"/>
+                            <constraint firstItem="NDk-qN-yl6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="PKh-w1-hEP"/>
+                            <constraint firstItem="NDk-qN-yl6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Ret-ue-PpJ"/>
+                            <constraint firstAttribute="trailing" secondItem="NDk-qN-yl6" secondAttribute="trailing" id="T3g-8l-Vww"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cleanDNSCacheButton" destination="NDY-Qr-Lc6" id="BFv-f6-b8l"/>
-                        <outlet property="runButton" destination="lTd-Cc-Z1Q" id="O83-Yf-0z9"/>
-                        <outlet property="selectButton" destination="DO1-TP-7Aa" id="kO8-IJ-TYn"/>
-                        <outlet property="selectNetworkButton" destination="6LP-cG-nJ0" id="Wsg-W2-vlM"/>
                         <outlet property="text" destination="uEE-sD-hcP" id="Fbm-hs-Yxx"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="704"/>
         </scene>
     </scenes>
 </document>

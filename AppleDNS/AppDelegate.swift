@@ -11,19 +11,16 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBAction func about(sender: AnyObject) {
-        
-        if let url = NSURL(string: "https://github.com/gongjianhui/AppleDNS") {
-            NSWorkspace.sharedWorkspace().openURL(url)
+    @IBAction func about(_ sender: AnyObject) {
+        if let url = URL(string: "https://github.com/gongjianhui/AppleDNS") {
+            NSWorkspace.shared().open(url)
         }
-
-        
     }
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 

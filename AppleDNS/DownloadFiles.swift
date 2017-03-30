@@ -9,10 +9,16 @@
 import Cocoa
 
 class DownloadFiles: NSObject {
+	
+	static let shared = DownloadFiles()
+	
+	fileprivate override init() {
+	}
+	
     
     var path = NSTemporaryDirectory() + "AppleDNS"
     
-    let queue = dispatch_queue_create("com.AppleDNS.background", nil)
+    let queue = DispatchQueue(label: "com.AppleDNS.background", attributes: [])
     
     var success: (() -> Void)?
 
@@ -25,7 +31,10 @@ class DownloadFiles: NSObject {
     var unzipSuccess: (() -> Void)?
     
     var pingTerminated: (() -> Void)?
-    
+	
+	
+	
+	
     
     func unzip() {
 
@@ -38,32 +47,25 @@ class DownloadFiles: NSObject {
     }
     
     func setPath() {
-        dispatch_sync(queue) {
-        do {
-            try NSFileManager.defaultManager().createDirectoryAtPath(self.path, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            print("createDirectoryAtPath fail")
+        queue.sync {
+			do {
+				try FileManager.default.createDirectory(atPath: self.path, withIntermediateDirectories: true, attributes: nil)
+			} catch {
+				print("createDirectoryAtPath fail")
+			}
         }
-        }
-        
-        
-        
     }
     
     
     
     func clearFiles() {
-        dispatch_sync(queue) {
-        
-        do {
-            try NSFileManager.defaultManager().removeItemAtPath(self.path)
-        } catch {
-            print("without file")
-        }
-        
-        
-        }
-        
+        queue.sync {
+			do {
+				try FileManager.default.removeItem(atPath: self.path)
+			} catch {
+				print("without file")
+			}
+		}
     }
     
     
@@ -71,21 +73,21 @@ class DownloadFiles: NSObject {
     
     func downloadFile() {
         
-        dispatch_async(queue) {
+        queue.async {
             
             let url = "https://codeload.github.com/gongjianhui/AppleDNS/zip/master"
             
-            if let url = NSURL(string: url) {
+            if let url = URL(string: url) {
                 
-                let fileUrl = NSURL(fileURLWithPath: self.path)
+                let fileUrl = URL(fileURLWithPath: self.path)
                 
-                let destinationUrl = fileUrl.URLByAppendingPathComponent(url.lastPathComponent!)
+                let destinationUrl = fileUrl.appendingPathComponent(url.lastPathComponent)
                 
-                if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
+                if FileManager().fileExists(atPath: destinationUrl.path) {
                     print("文件重复")
                 } else {
-                    if let myAudioDataFromUrl = NSData(contentsOfURL: url){
-                        if myAudioDataFromUrl.writeToURL(destinationUrl, atomically: true) {
+                    if let myAudioDataFromUrl = try? Data(contentsOf: url){
+                        if (try? myAudioDataFromUrl.write(to: destinationUrl, options: [.atomic])) != nil {
                             self.success!()
                         } else {
                             self.error!()
@@ -103,21 +105,12 @@ class DownloadFiles: NSObject {
     
     
     
-    func ping(title1: String, title2: String) {
+    func ping(_ title1: String, title2: String) {
         
-        dispatch_sync(queue) {
-            let t2: String
-            switch title2 {
-            case "电信":
-                t2 = "ChinaNet"
-            case "联通":
-                t2 = "ChinaUnicom"
-            default:
-                t2 = "CMCC"
-            }
+        queue.sync {
             
             let task = Task(launchPath: "/usr/bin/python",
-                            arguments: ["fetch-timeout.py", "\(t2).json"],
+                            arguments: ["fetch-timeout.py", "\(title2).json"],
                             currentDirectoryPath: self.path + "/AppleDNS-master/")
             task.setNotification()
             task.notification = { str in
@@ -141,8 +134,8 @@ class DownloadFiles: NSObject {
     }
     
     
-    func export(title1: String) {
-        dispatch_sync(queue) {
+    func export(_ title1: String) {
+        queue.sync {
         let task = Task(launchPath: "/usr/bin/python",
                         arguments: ["export-configure.py", title1],
                         currentDirectoryPath: self.path + "/AppleDNS-master/")

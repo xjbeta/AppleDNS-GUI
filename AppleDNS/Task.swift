@@ -10,8 +10,8 @@ import Cocoa
 
 class Task: NSObject {
 
-    private let pipe = NSPipe()
-    private let task = NSTask()
+    fileprivate let pipe = Pipe()
+    fileprivate let task = Process()
     
     var notification: ((String) -> Void)?
     var terminated: (() -> Void)?
@@ -29,10 +29,10 @@ class Task: NSObject {
         let outHandle = pipe.fileHandleForReading
         outHandle.waitForDataInBackgroundAndNotify()
         var obs1 : NSObjectProtocol!
-        obs1 = NSNotificationCenter.defaultCenter().addObserverForName(NSFileHandleDataAvailableNotification, object: outHandle, queue: nil) {  notification in
+        obs1 = NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outHandle, queue: nil) {  notification in
             let data = outHandle.availableData
-            if data.length > 0 {
-                if let str = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            if data.count > 0 {
+                if let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                     print("got output: \(str)")
                     
                     self.notification!(str as String)
@@ -41,15 +41,15 @@ class Task: NSObject {
                 outHandle.waitForDataInBackgroundAndNotify()
             } else {
                 print("EOF on stdout from process")
-                NSNotificationCenter.defaultCenter().removeObserver(obs1)
+                NotificationCenter.default.removeObserver(obs1)
             }
         }
         
         var obs2 : NSObjectProtocol!
-        obs2 = NSNotificationCenter.defaultCenter().addObserverForName(NSTaskDidTerminateNotification,                            object: task, queue: nil) { notification in
+        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification,                            object: task, queue: nil) { notification in
             self.terminated!()
             
-            NSNotificationCenter.defaultCenter().removeObserver(obs2)
+            NotificationCenter.default.removeObserver(obs2)
         }
     }
     
